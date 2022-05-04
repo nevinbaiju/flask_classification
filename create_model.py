@@ -20,3 +20,5 @@ model = CatBoostClassifier(iterations=2,
 model.fit(X_train, y_train, ['Sex', 'Housing', 'Saving accounts', 'Checking account', 'Purpose'] )
 
 pickle.dump(model, open('german_credit.pkl', 'wb'))
+
+print("Created model succesfully")

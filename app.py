@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request
+from flask import (Flask, 
+                   render_template, 
+                   request, flash)
 import os
 import numpy as np
 import pickle
@@ -15,15 +17,19 @@ def allowed_file(filename):
 def upload_file():
     if request.method == 'POST':
         print(request.form)
-        age = request.form['age']
-        sex = request.form['sex']
-        job = request.form['job']
-        housing = request.form['housing']
-        saving_account = request.form['saving_account']
-        checking_amount = request.form['checking_amount']
-        credit_amount = request.form['credit_amount']
-        duration = request.form['duration']
-        purpose = request.form['purpose']
+        try:
+            age = request.form['age']
+            sex = request.form['sex']
+            job = request.form['job']
+            housing = request.form['housing']
+            saving_account = request.form['saving_account']
+            checking_amount = request.form['checking_amount']
+            credit_amount = request.form['credit_amount']
+            duration = request.form['duration']
+            purpose = request.form['purpose']
+        except KeyError:
+            flash('Enter all the details correctly')
+            return render_template('index.html')
 
         test_arr = np.array([age, sex, job, housing, saving_account, checking_amount, credit_amount, duration, purpose])
         model = pickle.load(open('german_credit.pkl', 'rb'))

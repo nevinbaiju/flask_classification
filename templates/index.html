@@ -2,100 +2,109 @@
 
 {% block content %}
     
-<center>
-    <h1>Enter the details</h1>
-    <form method=post enctype=multipart/form-data>
-    <div style="width: 100%; display: table;">
-        <div style="display: table-row">
-            <div style="width: 50%; display: table-cell;"> 
-                
-                <label for="age">Age</label><br>
-                <input type=number name=age>
-                <br>
-                <p>Sex:</p>
-                <input type="radio" id="male" name="sex" value="male">
-                <label for="male">Male</label><br>
-                <input type="radio" id="female" name="sex" value="female">
-                <label for="female">Female</label><br>
-                
-                <br>
-
-                <p>Job:</p>
-                <input type="radio" id="0" name="job" value="0">
-                <label for="0">0</label><br>
-                <input type="radio" id="1" name="job" value="1">
-                <label for="1">1</label><br>
-                <input type="radio" id="2" name="job" value="2">
-                <label for="2">2</label><br>
-                <input type="radio" id="3" name="job" value="3">
-                <label for="3">3</label><br>
-                
-                <p>Housing:</p>
-                <input type="radio" id="own" name="housing" value="own">
-                <label for="own">Own</label><br>
-                <input type="radio" id="free" name="housing" value="free">
-                <label for="free">Free</label><br>
-                <input type="radio" id="rent" name="housing" value="rent">
-                <label for="rent">Rent</label><br>
-                
-                <p>Savings Account:</p>
-                <input type="radio" id="little" name="saving_account" value="little">
-                <label for="little">Little</label><br>
-                <input type="radio" id="quite rich" name="saving_account" value="quite rich">
-                <label for="quite rich">Quite Rich</label><br>
-                <input type="radio" id="rich" name="saving_account" value="rich">
-                <label for="rich">rich</label><br>
-                <input type="radio" id="moderate" name="saving_account" value="moderate">
-                <label for="moderate">Moderate</label><br>    
-            </div>
-            <div style="display: table-cell;"> 
-
-                <p>Checking Account:</p>
-                <input type="radio" id="little" name="checking_amount" value="little">
-                <label for="little">Little</label><br>
-                <input type="radio" id="moderate" name="checking_amount" value="moderate">
-                <label for="moderate">Moderate</label><br>
-                <input type="radio" id="rich" name="checking_amount" value="rich">
-                <label for="rich">rich</label><br>
-
-                <br>
-                
-                
-                <label for="credit_amount">Credit Amount</label><br>
-                <input type=number name=credit_amount>
-                <br>
-
-                <label for="duration">duration</label><br>
-                <input type=number name=duration>
-                <br>
-                
-                <p>Purpose:</p>
-                <input type="radio" id="radio/TV" name="purpose" value="radio/TV">
-                <label for="radio/TV">radio/TV</label><br>
-                <input type="radio" id="education" name="purpose" value="education">
-                <label for="education">education</label><br>
-                <input type="radio" id="furniture/equipment" name="purpose" value="furniture/equipment">
-                <label for="furniture/equipment">furniture/equipment</label><br>
-                <input type="radio" id="car" name="purpose" value="car">
-                <label for="car">car</label><br>
-                <input type="radio" id="business" name="purpose" value="business">
-                <label for="business">business</label><br>
-                <input type="radio" id="domestic appliances" name="purpose" value="domestic appliances">
-                <label for="domestic appliances">domestic appliances</label><br>
-                <input type="radio" id="repairs" name="purpose" value="repairs">
-                <label for="repairs">repairs</label><br>
-                <input type="radio" id="vacation/others" name="purpose" value="vacation/others">
-                <label for="vacation/others">vacation/others</label><br>
-            </div>
+<h3>Enter the details</h3>
+<form method=post enctype=multipart/form-data>
+    
+    <div class="row mb-3">
+        <label for="age" class="col-sm-2 col-form-label">Age</label>
+        <div class="col-sm-10">
+            <input type="number" name=age class="age" id="age">
         </div>
     </div>
 
-    <br><br>
+    <div class="row mb-3">
+        
+        <label for="sex" class="col-sm-2 col-form-label">Sex</label>
+        <div class="col-sm-10">
+            <select class="sex" name="sex">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+    </div>
 
-    <input type=submit value=submit>
+    <div class="row mb-3">
+        <label for="job" class="col-sm-2 col-form-label">Jobs</label>
+        <div class="col-sm-10">
+            <input type="number" name=job class="job" id="job">
+        </div>
+    </div>
 
     
-    <h2>{{ result }}</h2>
-    </form>
-</center>
+    <div class="row mb-3">
+        
+        <label for="housing" class="col-sm-2 col-form-label">Housing</label>
+        <div class="col-sm-10">
+            <select class="housing" name="housing">
+                <option value="own">Own</option>
+                <option value="free">Free</option>
+                <option value="rent">Rent</option>
+            </select>
+        </div>
+    </div>
+
+    
+    <div class="row mb-3">
+        
+        <label for="saving_account" class="col-sm-2 col-form-label">Savings Account</label>
+        <div class="col-sm-10">
+            <select class="saving_account" name="saving_account">
+                <option value="little">Little</option>
+                <option value="quite rich">Quite Rich</option>
+                <option value="rich">Rich</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="row mb-3">
+        
+        <label for="checking_amount" class="col-sm-2 col-form-label">Checking Amount</label>
+        <div class="col-sm-10">
+            <select class="checking_amount" name="checking_amount">
+                <option value="little">Little</option>
+                <option value="moderate">Moderate</option>
+                <option value="rich">Rich</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="row mb-3">
+        <label for="credit_amount" class="col-sm-2 col-form-label">Credit Amount</label>
+        <div class="col-sm-10">
+            <input type="number" name="credit_amount" class="credit_amount" id="credit_amount">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="duration" class="col-sm-2 col-form-label">Duration (Months)</label>
+        <div class="col-sm-10">
+            <input type="number" name="duration" class="duration" id="duration">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        
+        <label for="purpose" class="col-sm-2 col-form-label">Purpose</label>
+        <div class="col-sm-10">
+            <select class="purpose" name="purpose">
+                <option value="radio/TV">Radio or TV</option>
+                <option value="furniture/equipment">Furniture or Equipments</option>
+                <option value="car">Car</option>
+                <option value="business">Business</option>
+                <option value="domestic appliances">Domestic Appliances</option>
+                <option value="repairs">Repairs</option>
+                <option value="vacation/others">Vacation or Others</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+
+<h2>{{ result }}</h2>
+</form>
 {% endblock %}
